@@ -22,7 +22,12 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarStyle: {
+            backgroundColor: '#D9D9D9',
+          },
+        })}>
         <Tab.Screen name="Home" component={HomeContainer} />
         <Tab.Screen name="Wallet" component={WalletContainer} />
         <Tab.Screen name="Chart" component={ChartContainer} />
