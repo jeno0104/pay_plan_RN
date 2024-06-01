@@ -14,31 +14,20 @@ import HomeContainer from './src/container/Home/HomeContainer';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import WalletContainer from './src/container/Wallet/WalletContainer';
-
 import ChartContainer from './src/container/Chart/ChartContainer';
 import PeopleContainer from './src/container/People/PeopleContainer';
-import Login from './src/container/Login/Login';
+import LoginContainer from './src/container/Login/LoginContainer';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import LoginScreen from './src/screens/LoginScreen';
+import MainScreen from './src/screens/MainScreen';
+import AppNavigator from './src/navigations/AppNavigator';
 
 const Tab = createBottomTabNavigator();
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
   return (
-    // <NavigationContainer>
-    //   <Tab.Navigator
-    //     screenOptions={({route}) => ({
-    //       tabBarStyle: {
-    //         backgroundColor: '#D9D9D9',
-    //       },
-    //     })}>
-    //     <Tab.Screen name="Home" component={HomeContainer} />
-    //     <Tab.Screen name="Wallet" component={WalletContainer} />
-    //     <Tab.Screen name="Chart" component={ChartContainer} />
-    //     <Tab.Screen name="people" component={PeopleContainer} />
-    //   </Tab.Navigator>
-    // </NavigationContainer>
-    <View>
-      <Login />
-    </View>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
 

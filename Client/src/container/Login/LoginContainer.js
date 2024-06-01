@@ -1,13 +1,34 @@
+import {useNavigation, useNavigationState} from '@react-navigation/native';
+import {useEffect} from 'react';
 import {
+  Button,
   Image,
   SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
-export default function Login() {
+export default function LoginContainer() {
+  useEffect(() => {
+    if (navigationState) {
+      // 네비게이션 객체가 준비되었으므로 로그인 버튼 클릭 시 홈 화면으로 이동할 수 있습니다.
+      console.log('Navigation is ready!');
+    } else {
+      console.log('Navigation is not ready yet.');
+    }
+  }, [navigationState]);
+  const onLogin = () => {
+    // 백 소통 후
+    // 로그인 성공
+    navigation.navigate('Main');
+    // 로그인 실패
+  };
+  const navigation = useNavigation();
+  const navigationState = useNavigationState(state => state);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logo}>
@@ -19,7 +40,11 @@ export default function Login() {
             <TextInput style={styles.idInput} placeholder="아이디" />
           </View>
           <View>
-            <TextInput style={styles.pwInput} placeholder="비밀번호" />
+            <TextInput
+              style={styles.pwInput}
+              placeholder="비밀번호"
+              secureTextEntry={true}
+            />
           </View>
         </View>
         <View style={styles.selectMenu}>
@@ -34,9 +59,9 @@ export default function Login() {
           </View>
         </View>
         <View style={styles.clickMenu}>
-          <View style={styles.loginBtn}>
+          <TouchableOpacity style={styles.loginBtn} onPress={onLogin}>
             <Text style={styles.loginBtnText}>로그인</Text>
-          </View>
+          </TouchableOpacity>
           <View style={styles.signInBtn}>
             <Text style={styles.signInBtnText}>회원가입</Text>
           </View>
@@ -49,29 +74,30 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 20,
   },
   logo: {},
   login: {
-    width: 300,
-    height: 300,
-    backgroundColor: 'green',
+    width: 350,
+    height: 350,
     justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
+    borderWidth: 1,
+    borderColor: '#dcdcdc',
+    borderRadius: 50,
   },
   signUp: {
     gap: 5,
   },
   idInput: {
     backgroundColor: '#dcdcdc',
-    width: 200,
   },
   pwInput: {
-    width: 200,
+    width: 250,
     backgroundColor: '#dcdcdc',
   },
   findInfo: {
@@ -79,7 +105,7 @@ const styles = StyleSheet.create({
   },
   selectMenu: {
     flexDirection: 'row',
-    gap: 10,
+    gap: 30,
   },
   clickMenu: {
     width: '100%',
@@ -88,15 +114,20 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   loginBtn: {
-    width: '80%',
-    height: '25%',
-    backgroundColor: '#dcdcdc',
+    width: 250,
+    height: 50,
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  loginBtnText: {
+    color: 'white',
+    fontWeight: '700',
+  },
   signInBtn: {
-    width: '80%',
-    height: '25%',
+    width: 250,
+    height: 50,
+
     backgroundColor: '#dcdcdc',
     alignItems: 'center',
     justifyContent: 'center',
