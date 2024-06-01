@@ -25,3 +25,6 @@ export default function HomeContainer() {
     </View>
   );
 }
+
+// 어제와의 비교 -> 어제보다 오늘 00원을 많이 사용하셨습니다.
+// 리스트를 하단에!

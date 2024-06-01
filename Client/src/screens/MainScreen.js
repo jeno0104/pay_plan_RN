@@ -5,9 +5,28 @@ import PeopleContainer from '../container/People/PeopleContainer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Text, View} from 'react-native';
+import {Alert, Text, View} from 'react-native';
+import axios from 'axios';
+import {useEffect, useState} from 'react';
 export default function MainScreen() {
   const Tab = createBottomTabNavigator();
+  const [userData, setUserData] = useState();
+
+  useEffect(() => {
+    const getData = axios
+      .get('http://10.0.2.2:3000/')
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {
+        // 항상 실행되는 영역
+      });
+    setUserData(getData);
+  }, []);
+
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
