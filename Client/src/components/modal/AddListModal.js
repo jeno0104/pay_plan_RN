@@ -44,7 +44,7 @@ export default function AddListModal({
                 <Text style={styles.usedPriceText}>사용한 금액: </Text>
                 <TextInput
                   style={styles.usedPriceInput}
-                  placeholder="사용한 금액 입력하세요."
+                  placeholder="사용한 금액을 입력하세요."
                   keyboardType="numeric"
                   onChangeText={setNowUsedPrice}
                 />
@@ -126,9 +126,10 @@ const styles = StyleSheet.create({
   },
   usedPriceInput: {
     backgroundColor: '#C5C4C4',
-    width: 150,
-    height: 40,
+    width: 170,
+    height: 50,
     borderRadius: 10,
     justifyContent: 'center',
+    textAlign: 'center',
   },
 });

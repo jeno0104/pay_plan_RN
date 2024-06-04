@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import AddListModal from '../modal/AddListModal';
 import UsedChart from '../../shared/UsedChart';
+import MadeMisison from './components/MadeMission';
+import NotMakeMission from './components/NotMakeMission';
 
 export default function HomeComponent({
   goalDay,
@@ -29,30 +31,33 @@ export default function HomeComponent({
     <View style={styles.container}>
       <View style={styles.info}>
         <View>
-          <UsedChart percentage={percentage} />
-        </View>
-        <View style={styles.goal}>
-          <Text>
-            목표 금액의{' '}
-            <Text style={styles.goalPercentageText}>{percentage}</Text>%를
-            사용했어요!
-          </Text>
+          {goalDay ? (
+            <MadeMisison
+              goalDay={goalDay}
+              remainingDay={remainingDay}
+              percentage={percentage}
+              goalPrice={goalPrice}
+              usedPrice={usedPrice}
+              isClicked={isClicked}
+              setIsClicked={setIsClicked}
+              setUsedPrice={setUsedPrice}
+              setPercentage={setPercentage}
+            />
+          ) : (
+            <NotMakeMission />
+          )}
         </View>
         <View>
-          <Text>
-            남은 일수: <Text style={styles.remainingDayText}>{goalDay}일</Text>{' '}
-            / {remainingDay}일
-          </Text>
-          <Text>
-            잔액: <Text style={styles.remainingPriceText}>{usedPrice} 원</Text>{' '}
-            / {goalPrice} 원
-          </Text>
+          {goalDay ? (
+            <TouchableOpacity style={styles.plusBtn} onPress={clickBtn}>
+              <Text style={styles.plusBtnColor}>기록하기</Text>
+            </TouchableOpacity>
+          ) : (
+            ''
+          )}
         </View>
       </View>
 
-      <TouchableOpacity style={styles.plusBtn} onPress={clickBtn}>
-        <Text style={styles.plusBtnColor}>+</Text>
-      </TouchableOpacity>
       <AddListModal
         isClicked={isClicked}
         setIsClicked={setIsClicked}
@@ -69,45 +74,23 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: '3%',
   },
   info: {
-    width: '90%',
-    height: '95%',
-    borderWidth: 1,
-    alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
-    borderColor: '#C5C4C4',
+    alignItems: 'center',
     gap: 30,
   },
+
   plusBtn: {
-    width: 50,
-    height: 50,
-    position: 'absolute',
-    backgroundColor: 'blue',
-    right: '3%',
-    bottom: '-9%',
-    borderRadius: 50,
-    // padding: 0,
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    width: 90,
+    height: 30,
+
+    backgroundColor: '#1AA9D6',
+    borderRadius: 10,
   },
   plusBtnColor: {
-    fontSize: 35,
+    fontSize: 20,
     color: 'white',
     textAlign: 'center',
-  },
-  remainingPriceText: {
-    fontWeight: '700',
-    color: 'red',
-  },
-  remainingDayText: {
-    fontWeight: '700',
-    color: 'blue',
-  },
-  goalPercentageText: {
-    fontWeight: '700',
-    color: 'red',
   },
 });

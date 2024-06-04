@@ -8,9 +8,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Alert, Text, View} from 'react-native';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+
 export default function MainScreen() {
   const Tab = createBottomTabNavigator();
   const [userData, setUserData] = useState();
+  const [missionData, setMissionData] = useState([]);
 
   useEffect(() => {
     const getData = axios
@@ -29,41 +31,51 @@ export default function MainScreen() {
 
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
-        tabBarStyle: {
-          backgroundColor: '#D9D9D9',
+      tabBarOptions={{
+        showLabel: false,
+        activeTintColor: 'black', // 선택된 탭의 아이콘 색상을 red로 변경
+        inactiveTintColor: 'gray', // 선택되지 않은 탭의 아이콘 색상을 gray로 변경
+        style: {
+          backgroundColor: '#ffffff', // 탭 바 배경색을 흰색으로 변경
         },
-        headerShown: false,
-      })}>
+      }}
+      screenOptions={
+        {
+          // headerShown: false,
+        }
+      }>
       <Tab.Screen
         name="Home"
         component={HomeContainer}
-        screenOptions={{
-          headerShown: false,
-        }}
         options={{
-          tabBarIcon: () => <Icon name="home" size={25} color="black" />,
+          tabBarIcon: ({color}) => <Icon name="home" size={25} color={color} />, // 아이콘 색상을 현재 탭의 색상으로 변경
         }}
       />
       <Tab.Screen
         name="Wallet"
         component={WalletContainer}
         options={{
-          tabBarIcon: () => <Icon name="wallet" size={25} color="black" />,
+          tabBarIcon: ({color}) => (
+            <Icon name="wallet" size={25} color={color} />
+          ), // 아이콘 색상을 현재 탭의 색상으로 변경
         }}
       />
       <Tab.Screen
         name="Chart"
         component={ChartContainer}
         options={{
-          tabBarIcon: () => <Icon name="chart-line" size={25} color="black" />,
+          tabBarIcon: ({color}) => (
+            <Icon name="chart-line" size={25} color={color} />
+          ), // 아이콘 색상을 현재 탭의 색상으로 변경
         }}
       />
       <Tab.Screen
         name="people"
         component={PeopleContainer}
         options={{
-          tabBarIcon: () => <Ionicons name="people" size={25} color="black" />,
+          tabBarIcon: ({color}) => (
+            <Ionicons name="people" size={25} color={color} />
+          ), // 아이콘 색상을 현재 탭의 색상으로 변경
         }}
       />
     </Tab.Navigator>

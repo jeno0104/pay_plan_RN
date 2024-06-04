@@ -87,18 +87,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     borderWidth: 1,
-    borderColor: '#dcdcdc',
+    borderColor: '#1AA9D6',
     borderRadius: 50,
   },
   signUp: {
     gap: 5,
   },
   idInput: {
-    backgroundColor: '#dcdcdc',
+    backgroundColor: '#FFFFFF',
   },
   pwInput: {
     width: 250,
-    backgroundColor: '#dcdcdc',
+    backgroundColor: '#FFFFFF',
   },
   findInfo: {
     flexDirection: 'row',
@@ -116,19 +116,19 @@ const styles = StyleSheet.create({
   loginBtn: {
     width: 250,
     height: 50,
-    backgroundColor: 'black',
+    backgroundColor: '#1AA9D6',
     alignItems: 'center',
     justifyContent: 'center',
   },
   loginBtnText: {
-    color: 'white',
+    color: '#FFFFFF',
     fontWeight: '700',
   },
   signInBtn: {
     width: 250,
     height: 50,
 
-    backgroundColor: '#dcdcdc',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },

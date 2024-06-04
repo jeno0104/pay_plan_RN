@@ -4,11 +4,11 @@ export default function UsedChart({percentage}) {
   console.log(percentage);
   return (
     <AnimatedProgressWheel
-      size={180}
+      size={250}
       width={20}
-      color={'red'}
+      color={'#1AA9D6'}
       progress={percentage}
-      backgroundColor={'green'}
+      backgroundColor={'#dcdcdc'}
     />
   );
 }
