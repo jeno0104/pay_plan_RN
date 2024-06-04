@@ -1,10 +1,12 @@
 import HomeContainer from '../container/Home/HomeContainer';
-import WalletContainer from '../container/Wallet/WalletContainer';
+import PayContainer from '../container/Pay/PayContainer';
 import ChartContainer from '../container/Chart/ChartContainer';
-import PeopleContainer from '../container/People/PeopleContainer';
+import MoreContainer from '../container/More/MoreContainer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import More from 'react-native-vector-icons/Feather';
+
 import {Alert, Text, View} from 'react-native';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
@@ -52,8 +54,8 @@ export default function MainScreen() {
         }}
       />
       <Tab.Screen
-        name="Wallet"
-        component={WalletContainer}
+        name="Pay"
+        component={PayContainer}
         options={{
           tabBarIcon: ({color}) => (
             <Icon name="wallet" size={25} color={color} />
@@ -70,11 +72,11 @@ export default function MainScreen() {
         }}
       />
       <Tab.Screen
-        name="people"
-        component={PeopleContainer}
+        name="More"
+        component={MoreContainer}
         options={{
           tabBarIcon: ({color}) => (
-            <Ionicons name="people" size={25} color={color} />
+            <More name="more-horizontal" size={25} color={color} />
           ), // 아이콘 색상을 현재 탭의 색상으로 변경
         }}
       />

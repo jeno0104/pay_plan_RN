@@ -1,7 +1,6 @@
 import {useNavigation, useNavigationState} from '@react-navigation/native';
 import {useEffect} from 'react';
 import {
-  Button,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -94,11 +93,11 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   idInput: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#dcdcdc',
   },
   pwInput: {
     width: 250,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#dcdcdc',
   },
   findInfo: {
     flexDirection: 'row',

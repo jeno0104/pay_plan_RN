@@ -33,7 +33,7 @@ export default function MadeMisison({
             </Text>{' '}
             / {remainingDay}일
           </Text>
-          <Text>
+          <Text style={styles.remainingPriceText}>
             잔액: <Text style={styles.remainingPriceText}>{usedPrice} 원</Text>{' '}
             / {goalPrice} 원
           </Text>
@@ -87,10 +87,14 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+
   remainingPriceText: {
     fontSize: 15,
     fontWeight: '700',
-    color: 'red',
+    // color: 'red',
+  },
+  remainingDaysText: {
+    color: 'black',
   },
   remainingDayText: {
     fontSize: 15,
@@ -104,5 +108,6 @@ const styles = StyleSheet.create({
   },
   goalText: {
     fontSize: 16,
+    color: 'black',
   },
 });

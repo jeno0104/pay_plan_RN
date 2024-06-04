@@ -1,9 +1,9 @@
 import {Text, View} from 'react-native';
 
-export default function WalletContainer() {
+export default function MoreContainer() {
   return (
     <View>
-      <Text>Wallet Container</Text>
+      <Text>More Container</Text>
     </View>
   );
 }
