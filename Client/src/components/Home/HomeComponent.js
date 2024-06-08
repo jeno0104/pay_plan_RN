@@ -47,7 +47,7 @@ export default function HomeComponent({
             <NotMakeMission />
           )}
         </View>
-        <View>
+        {/* <View>
           {goalDay ? (
             <TouchableOpacity style={styles.plusBtn} onPress={clickBtn}>
               <Text style={styles.plusBtnColor}>기록하기</Text>
@@ -55,17 +55,17 @@ export default function HomeComponent({
           ) : (
             ''
           )}
-        </View>
+        </View> */}
       </View>
 
-      <AddListModal
+      {/* <AddListModal
         isClicked={isClicked}
         setIsClicked={setIsClicked}
         setUsedPrice={setUsedPrice}
         setPercentage={setPercentage}
         usedPrice={usedPrice}
         goalPrice={goalPrice}
-      />
+      /> */}
     </View>
   );
 }
