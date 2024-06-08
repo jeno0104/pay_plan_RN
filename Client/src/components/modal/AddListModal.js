@@ -40,7 +40,7 @@ export default function AddListModal({
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <View>
-              <View style={styles.usedPrice}>
+              {/* <View style={styles.usedPrice}>
                 <Text style={styles.usedPriceText}>사용한 금액: </Text>
                 <TextInput
                   style={styles.usedPriceInput}
@@ -48,6 +48,31 @@ export default function AddListModal({
                   keyboardType="numeric"
                   onChangeText={setNowUsedPrice}
                 />
+              </View> */}
+              <View>
+                <Text>챌린지 추가</Text>
+              </View>
+              <View>
+                <View>
+                  <Text>챌린지 이름</Text>
+                </View>
+                <View>
+                  <TextInput />
+                </View>
+              </View>
+              <View>
+                <View>
+                  <Text>목표 기간</Text>
+                </View>
+                <View></View>
+              </View>
+              <View>
+                <View>
+                  <Text>목표 금액</Text>
+                </View>
+                <View>
+                  <TextInput />
+                </View>
               </View>
             </View>
             <View>
@@ -72,10 +97,9 @@ const styles = StyleSheet.create({
     marginTop: 22,
     position: 'absolute',
     left: '5%',
-    top: '30%',
+    top: '10%',
   },
   modalView: {
-    // width: '180%',
     // height: '250%',
     margin: 20,
     backgroundColor: 'white',

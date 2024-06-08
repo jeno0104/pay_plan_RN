@@ -34,18 +34,16 @@ export default function MainScreen() {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        showLabel: false,
+        // showLabel: false,
         activeTintColor: 'black', // 선택된 탭의 아이콘 색상을 red로 변경
         inactiveTintColor: 'gray', // 선택되지 않은 탭의 아이콘 색상을 gray로 변경
         style: {
           backgroundColor: '#ffffff', // 탭 바 배경색을 흰색으로 변경
         },
       }}
-      screenOptions={
-        {
-          // headerShown: false,
-        }
-      }>
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Tab.Screen
         name="Home"
         component={HomeContainer}

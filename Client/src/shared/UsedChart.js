@@ -7,7 +7,7 @@ export default function UsedChart({percentage}) {
       size={250}
       width={20}
       color={'#1AA9D6'}
-      progress={percentage}
+      progress={10}
       backgroundColor={'#dcdcdc'}
     />
   );

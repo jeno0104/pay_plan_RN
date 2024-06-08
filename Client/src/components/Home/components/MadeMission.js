@@ -20,8 +20,7 @@ export default function MadeMisison({
       <View style={styles.information}>
         <View style={styles.goal}>
           <Text style={styles.goalText}>
-            목표 금액의{' '}
-            <Text style={styles.goalPercentageText}>{percentage}</Text>%를
+            목표 금액의 <Text style={styles.goalPercentageText}>10</Text>%를
             사용했어요!
           </Text>
         </View>
@@ -59,7 +58,6 @@ const styles = StyleSheet.create({
   },
   information: {
     gap: 10,
-    backgroundColor: '#dcdcdc',
     width: 272,
     height: 105,
     borderRadius: 10,

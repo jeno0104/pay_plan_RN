@@ -28,6 +28,7 @@ export default function LoginContainer() {
   const navigation = useNavigation();
   const navigationState = useNavigationState(state => state);
 
+  const onSignUp = () => {};
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logo}>
@@ -47,9 +48,6 @@ export default function LoginContainer() {
           </View>
         </View>
         <View style={styles.selectMenu}>
-          <View>
-            <Text>자동 로그인</Text>
-          </View>
           <View style={styles.findInfo}>
             <Text>아이디</Text>
             <Text>/</Text>
@@ -58,11 +56,15 @@ export default function LoginContainer() {
           </View>
         </View>
         <View style={styles.clickMenu}>
-          <TouchableOpacity style={styles.loginBtn} onPress={onLogin}>
-            <Text style={styles.loginBtnText}>로그인</Text>
-          </TouchableOpacity>
-          <View style={styles.signInBtn}>
-            <Text style={styles.signInBtnText}>회원가입</Text>
+          <View>
+            <TouchableOpacity style={styles.signUpBtn} onPress={onSignUp}>
+              <Text style={styles.signUpBtnText}>sign up</Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity style={styles.loginBtn} onPress={onLogin}>
+              <Text style={styles.loginBtnText}>login</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -76,59 +78,71 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 20,
   },
   logo: {},
   login: {
     width: 350,
-    height: 350,
+    height: 250,
     justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
-    borderWidth: 1,
-    borderColor: '#1AA9D6',
-    borderRadius: 50,
   },
   signUp: {
     gap: 5,
   },
   idInput: {
     backgroundColor: '#dcdcdc',
+    width: 245,
+    height: 35,
+    fontSize: 13,
+    padding: 5,
+    borderRadius: 10,
   },
   pwInput: {
-    width: 250,
+    width: 245,
+    fontSize: 13,
+    height: 35,
+    padding: 5,
     backgroundColor: '#dcdcdc',
+    borderRadius: 10,
   },
   findInfo: {
     flexDirection: 'row',
   },
   selectMenu: {
-    flexDirection: 'row',
-    gap: 30,
+    // justifyContent: 'flex-end',
+    // alignItems: 'flex-end',
   },
   clickMenu: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
+    flexDirection: 'row',
   },
   loginBtn: {
-    width: 250,
-    height: 50,
+    width: 115,
+    height: 30,
     backgroundColor: '#1AA9D6',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 10,
   },
+
   loginBtnText: {
     color: '#FFFFFF',
     fontWeight: '700',
   },
-  signInBtn: {
-    width: 250,
-    height: 50,
-
-    backgroundColor: '#FFFFFF',
+  signUpBtn: {
+    width: 115,
+    height: 30,
+    backgroundColor: '#dcdcdc',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 10,
+  },
+  signUpBtnText: {
+    color: 'black',
+    fontWeight: '700',
   },
 });
