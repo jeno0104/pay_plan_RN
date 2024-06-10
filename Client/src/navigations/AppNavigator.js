@@ -3,6 +3,7 @@ import LoginScreen from '../screens/LoginScreen';
 import MainScreen from '../screens/MainScreen';
 import ChallengeScreen from '../screens/ChallengeScreen';
 import ChallengeFinish from '../screens/ChallengeFinish';
+import SignUpScreen from '../screens/SignUpScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export default function AppNavigator() {
         headerShown: false,
       }}>
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Challenge" component={ChallengeScreen} />
       <Stack.Screen name="ChallengeFinish" component={ChallengeFinish} />

@@ -19,16 +19,17 @@ export default function LoginContainer() {
       console.log('Navigation is not ready yet.');
     }
   }, [navigationState]);
+  const navigation = useNavigation();
+  const navigationState = useNavigationState(state => state);
   const onLogin = () => {
     // 백 소통 후
     // 로그인 성공
     navigation.navigate('Main');
     // 로그인 실패
   };
-  const navigation = useNavigation();
-  const navigationState = useNavigationState(state => state);
-
-  const onSignUp = () => {};
+  const onSignUp = () => {
+    navigation.navigate('SignUp');
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logo}>

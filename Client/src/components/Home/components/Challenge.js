@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import BackBtn from '../../../shared/BackBtn';
 
 export default function Challenge() {
   const onBackBtn = () => {
@@ -18,11 +19,7 @@ export default function Challenge() {
   };
   return (
     <View style={styles.container}>
-      <View>
-        <TouchableOpacity onPress={onBackBtn}>
-          <Text style={styles.backBtn}>←</Text>
-        </TouchableOpacity>
-      </View>
+      <BackBtn root={'Main'} />
       <View>
         <Text style={styles.challengeAddText}>챌린지 추가</Text>
       </View>
@@ -61,11 +58,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     gap: 30,
   },
-  backBtn: {
-    fontSize: 24,
-    color: 'black',
-    fontWeight: 'bold',
-  },
+
   challengeAddText: {
     color: '#1AA9D6',
     fontSize: 20,
